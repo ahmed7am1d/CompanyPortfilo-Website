@@ -1,0 +1,100 @@
+/* #region Variables  */
+
+/* #endregion */
+
+/*#region Global Rules  */
+* {
+  /* so that padding and margin does not affect orginal parent width */
+  box-sizing: border-box;
+}
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+.parent {
+  background-color: #eee;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  /* taking the rest of pixles from width and put them left and right equally */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*#endregion End Global Rules */
+
+/* #region  Start Header */
+header {
+    padding: 20px;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    width: 60px;
+}
+
+header nav {
+    position: relative;
+}
+
+header nav .icon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+header nav .icon span {
+    background-color: #333;
+    margin-bottom: 5px;
+    height: 2px;
+    
+}
+
+header nav .icon span:first-child {
+    height: 3px;
+    width: 100%;
+}
+header nav .icon span:nth-child(2) {
+    height: 3px;
+    width: 60%;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+header nav .icon span:last-child {
+    height: 3px;
+    width: 100%;
+}
+
+header nav:hover .icon span:nth-child(2){
+    width: 100%;
+}
+/* #endregion End Header */
