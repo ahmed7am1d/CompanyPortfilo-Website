@@ -13,6 +13,10 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .parent {
   background-color: #eee;
 }
@@ -44,6 +48,30 @@ body {
 }
 
 /*#endregion End Global Rules */
+
+/* #region  Components [Frequently used] */
+.special-heading {
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    margin: 0;
+}
+.special-heading + p {
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+@media (max-width:767px) {
+    .special-heading {
+        font-size:60px ;
+    }
+    .special-heading + p {
+        margin-top: -20px;
+    }
+}
+/* #endregion */
 
 /* #region  Start Header */
 header {
@@ -148,7 +176,7 @@ header nav ul li:not(:last-child) a {
 
 /* #region  Start Landing Section */
 .landing {
-  background-image: url("/images/mountain.jpg");
+  background-image: url("https://wallpaperaccess.com/full/686998.jpg");
   background-size: cover;
   height: calc(100vh - 64px);
   position: relative;
@@ -184,34 +212,41 @@ header nav ul li:not(:last-child) a {
 
 /* #region Start Features Section*/
 .feature {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    background-color: #f6f6f6;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f6f6f6;
 }
 
 .feature .container {
-    display: grid;
-    /* auto-fill => it will fill the columns with the available space, min is 300px and max 1fr */
-    /* if we have 1000px it will be divided to the 3 elements also 900 but if 800 two take 300px and one go down  */
-    grid-template-columns:repeat(auto-fill,minmax(300px,1fr)) ;
+  display: grid;
+  /* auto-fill => it will fill the columns with the available space, min is 300px and max 1fr */
+  /* if we have 1000px it will be divided to the 3 elements also 900 but if 800 two take 300px and one go down  */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .feature .feat {
-    padding:20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
 .feature .feat i {
-    color: var(--main-color);
+  color: var(--main-color);
 }
 
 .feature .feat h3 {
-    font-weight: 800;
-    margin: 30px 0;
+  font-weight: 800;
+  margin: 30px 0;
 }
 
 .feature .feat p {
-    line-height: 1.8;
-    color: #777;
-    font-size: 17px;
+  line-height: 1.8;
+  color: #777;
+  font-size: 17px;
 }
 /* #endregion */
+
+/* #region Start Services Section  */
+.services {
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+/* #endregion End services section */
