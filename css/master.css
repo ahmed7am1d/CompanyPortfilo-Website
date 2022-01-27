@@ -1,5 +1,7 @@
 /* #region Variables  */
-
+:root {
+  --main-color: #10cab7;
+}
 /* #endregion */
 
 /*#region Global Rules  */
@@ -45,56 +47,171 @@ body {
 
 /* #region  Start Header */
 header {
-    padding: 20px;
+  padding: 20px;
 }
 
 header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header .logo {
-    width: 60px;
+  width: 60px;
 }
 
 header nav {
-    position: relative;
+  position: relative;
 }
 
 header nav .icon {
-    width: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 header nav .icon span {
-    background-color: #333;
-    margin-bottom: 5px;
-    height: 2px;
-    
+  background-color: #333;
+  margin-bottom: 5px;
+  height: 2px;
 }
 
 header nav .icon span:first-child {
-    height: 3px;
-    width: 100%;
+  height: 3px;
+  width: 100%;
 }
 header nav .icon span:nth-child(2) {
-    height: 3px;
-    width: 60%;
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
+  height: 3px;
+  width: 60%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 header nav .icon span:last-child {
-    height: 3px;
-    width: 100%;
+  height: 3px;
+  width: 100%;
 }
 
-header nav:hover .icon span:nth-child(2){
-    width: 100%;
+header nav:hover .icon span:nth-child(2) {
+  width: 100%;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+  position: absolute;
+  right: 0;
+  min-width: 200px;
+  top: calc(100% + 15px);
+  display: none;
+  /* to overlap all the elements */
+  z-index: 1;
+}
+
+/* Creating the arrow  */
+header nav ul::before {
+  content: "";
+  border: 10px solid;
+  border-color: transparent transparent #f6f6f6 transparent;
+  position: absolute;
+  /* we give it 5px because there is right and left of border  */
+  right: 5px;
+  top: -20px;
+}
+header nav:hover ul {
+  display: block;
+}
+header nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+header nav ul li a:hover {
+  padding-left: 25px;
+}
+
+header nav ul li:not(:last-child) a {
+  border-bottom: 1px solid #ddd;
 }
 /* #endregion End Header */
+
+/* #region  Start Landing Section */
+.landing {
+  background-image: url("/images/mountain.jpg");
+  background-size: cover;
+  height: calc(100vh - 64px);
+  position: relative;
+}
+
+.landing .intro-text {
+  /* Make the intro text always in the center of the landing section(it is parent[landingpage] should be relative */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 100%;
+  width: 320px;
+}
+
+.landing .intro-text h1 {
+  margin: 0;
+  color: var(--main-color);
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.landing .intro-text p {
+  font-size: 19px;
+  line-height: 1.8;
+}
+/* #endregion */
+
+/* #region Start Features Section*/
+.feature {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #f6f6f6;
+}
+
+.feature .container {
+    display: grid;
+    /* auto-fill => it will fill the columns with the available space, min is 300px and max 1fr */
+    /* if we have 1000px it will be divided to the 3 elements also 900 but if 800 two take 300px and one go down  */
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr)) ;
+}
+
+.feature .feat {
+    padding:20px;
+    text-align: center;
+}
+.feature .feat i {
+    color: var(--main-color);
+}
+
+.feature .feat h3 {
+    font-weight: 800;
+    margin: 30px 0;
+}
+
+.feature .feat p {
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;
+}
+/* #endregion */
